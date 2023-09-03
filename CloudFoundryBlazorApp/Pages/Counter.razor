@@ -8,6 +8,13 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
+<!-- Design: Quartz Light -->
+<ui5-button @onclick="IncrementCount">Hello UI5 Web Components</ui5-button>
+<ui5-button design="Emphasized" @onclick="IncrementCount">Hello UI5 Web Components</ui5-button>
+<ui5-button design="Attention" @onclick="IncrementCount">Hello UI5 Web Components</ui5-button>
+<ui5-button design="Positive" @onclick="IncrementCount">Hello UI5 Web Components</ui5-button>
+<ui5-button design="Negative" @onclick="IncrementCount">Hello UI5 Web Components</ui5-button>
+
 @code {
     private int currentCount = 0;
 
