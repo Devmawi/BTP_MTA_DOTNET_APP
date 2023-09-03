@@ -1,0 +1,22 @@
+_schema-version: '3.1'
+ID: Blazor-Sample
+version: 1.0.0
+description: "A simple Blazor project."
+parameters:
+  enable-parallel-deployments: true
+modules:
+  - name: Blazor-Sample-srv
+    type: dotnet_core
+    path: CloudFoundryBlazorApp
+    parameters:
+      buildpack: dotnet_core_buildpack
+    build-parameters:
+      build-result: bin/Release/net7.0/publish
+      builder: custom
+      commands:
+        - dotnet publish -c Release
+    provides:
+      - name: blazor-srv # required by consumers of CAP services (e.g. approuter)
+        properties:
+          srv-url: ${default-url}
+    requires: []
